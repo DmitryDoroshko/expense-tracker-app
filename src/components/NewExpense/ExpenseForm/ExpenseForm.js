@@ -22,7 +22,7 @@ const ExpenseForm = ({onAddNewExpense, onError}) => {
 
     // If everything is valid, proceed with the adding new expense
     if (enteredTitle.trim().length > 0 && enteredAmount.trim().length > 0 && enteredDate) {
-      onAddNewExpense({title: enteredTitle, amount: enteredAmount, date: new Date(enteredDate)});
+      onAddNewExpense({title: enteredTitle, amount: +enteredAmount, date: new Date(enteredDate)});
       setEnteredDate("");
       setEnteredTitle("");
       setEnteredAmount("");
