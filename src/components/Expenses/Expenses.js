@@ -4,6 +4,7 @@ import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import {DEFAULT_SELECTED_YEAR} from "../../utils/constants";
 import {useEffect, useState} from "react";
 import ExpensesList from "../ExpensesList/ExpensesList";
+import ExpensesChart from "../ExpensesChart/ExpensesChart";
 
 function Expenses({expenses}) {
   const getInitialSelectedExpenses = () => {
@@ -33,6 +34,7 @@ function Expenses({expenses}) {
 
   return <Card className="expenses">
     <ExpenseFilter onYearChange={yearChangeHandler} selectedYear={selectedYear}/>
+    <ExpensesChart expenses={filteredExpenses}/>
     <ExpensesList items={filteredExpenses} selectedYear={selectedYear}/>
   </Card>
 }
